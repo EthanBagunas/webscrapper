@@ -8,9 +8,10 @@ page =requests.get(URL)
 soup= BeautifulSoup(page.content, "html.parser")
 
 results = soup.find(id = "ResultsContainer")
-print(results.prettify())   
 
-job_elements =results.find_all("div", class_ ="card-content")
+job_elements =results.find_all("div", class_ = "card-content")
 
 for job_element in job_elements:
     print(job_element, end="\n"*2)
+    
+print(job_elements)
